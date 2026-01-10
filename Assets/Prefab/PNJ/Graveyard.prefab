@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1276365140522436258}
   - component: {fileID: 1194089995159311570}
   - component: {fileID: 7509682215623444928}
+  - component: {fileID: 6164896448975953484}
   m_Layer: 0
   m_Name: Graveyard
   m_TagString: Untagged
@@ -121,3 +122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfd2241b9e1d0f4bb03d95be7bfc8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6164896448975953484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964978537247847713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b2c4c8224e33c47bbd868c3c4600ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueData: {fileID: 0}
+  _dialogueController: {fileID: 0}
