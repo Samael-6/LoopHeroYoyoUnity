@@ -13,8 +13,70 @@ MonoBehaviour:
   m_Name: KingDialogue
   m_EditorClassIdentifier: 
   rows:
-  - characterName: 
-    longDialogue: 
-    nextRow: 
-    NextRowNumber: 0
+  - characterName: Roi
+    longDialogue: "Ah vous voil\xE0 jeune h\xE9ros venu d'ailleurs !"
+    NextRowNumber: 1
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: Je vous attendais ! Posez-moi les questions que vous voulez.
+    NextRowNumber: 2
+    characterImage: {fileID: 0}
+  - characterName: Player
+    longDialogue: "O\xF9 je suis ?"
+    NextRowNumber: 3
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: Tout simplement dans mon vaste Royaume !
+    NextRowNumber: 4
+    characterImage: {fileID: 0}
+  - characterName: Player
+    longDialogue: Qui est la sentinelle ?
+    NextRowNumber: 5
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: "La sentinelle est un golem de pierre de plus d'une cinquantaine
+      de m\xE8tres de haut ! Mais pour vous, preux h\xE9ros ce n'est rien !"
+    NextRowNumber: 6
+    characterImage: {fileID: 0}
+  - characterName: Player
+    longDialogue: Pourquoi vaincre la sentinelle ?
+    NextRowNumber: 7
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: "Elle a d\xE9cid\xE9 de bloquer le passage vers mon ch\xE2teau
+      !"
+    NextRowNumber: 8
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: "Avez-vous d'autres questions braves h\xE9ros ?"
+    NextRowNumber: 9
+    characterImage: {fileID: 0}
+  - characterName: Player
+    longDialogue: "Merci, mais \xE7a ira."
+    NextRowNumber: 10
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: Revenez me voir si besoin !
+    NextRowNumber: -1
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: "Vous l'avez d\xE9j\xE0 vaincu ?"
+    NextRowNumber: 12
+    characterImage: {fileID: 0}
+  - characterName: Player
+    longDialogue: Pas encore...
+    NextRowNumber: 13
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: Alors retournez y !
+    NextRowNumber: -1
+    characterImage: {fileID: 0}
+  - characterName: Player
+    longDialogue: J'ai vaincu la Sentinelle !!!
+    NextRowNumber: 15
+    characterImage: {fileID: 0}
+  - characterName: Roi
+    longDialogue: "F\xE9licitation ! Bient\xF4t nous allons pouvoir passer \xE0 la
+      suite des Op\xE9ration !"
+    NextRowNumber: -1
     characterImage: {fileID: 0}

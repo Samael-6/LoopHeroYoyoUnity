@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50620149dc38d9e48b90bf71cef6f3a7, type: 3}
+  m_Name: KingsLetterDialogue
+  m_EditorClassIdentifier: 
+  rows:
+  - characterName: Lettre du Roi
+    longDialogue: "Bien le bonjour cher aventurier. Nous vous avons invoqu\xE9 afin
+      que vous sauviez notre royaume."
+    NextRowNumber: 1
+    characterImage: {fileID: 0}
+  - characterName: Lettre du Roi
+    longDialogue: "Pour commencer votre p\xE9riple, vous devrez affronter la sentinelle
+      qui se trouve au nord du territoire, non loin de l\xE0."
+    NextRowNumber: 2
+    characterImage: {fileID: 0}
+  - characterName: Lettre du Roi
+    longDialogue: "Si vous r\xE9ussissez \xE0 la vaincre alors le passage pour la
+      plaine sera de nouveau ouverte et nous pourrons nous rendre au ch\xE2teau."
+    NextRowNumber: 3
+    characterImage: {fileID: 0}
+  - characterName: Lettre du Roi
+    longDialogue: "Si vous avez des questions, venez me retrouver \xE0 la cit\xE9."
+    NextRowNumber: -1
+    characterImage: {fileID: 0}

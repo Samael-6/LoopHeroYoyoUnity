@@ -7,7 +7,6 @@ public struct DialogueRow
 {
     public string characterName;
     public string longDialogue;
-    public string nextRow;
     public int NextRowNumber;
     public Sprite characterImage;
 }

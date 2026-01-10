@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50620149dc38d9e48b90bf71cef6f3a7, type: 3}
+  m_Name: SuspectWomenDialogue
+  m_EditorClassIdentifier: 
+  rows:
+  - characterName: Femme Louche
+    longDialogue: "Pssst ! Par ici jeune h\xE9ros."
+    NextRowNumber: 1
+    characterImage: {fileID: 0}
+  - characterName: Femme Louche
+    longDialogue: "Je vais vous aider dans votre qu\xEAte..."
+    NextRowNumber: 2
+    characterImage: {fileID: 0}
+  - characterName: Player
+    longDialogue: Ha merci ! Parce qu-...
+    NextRowNumber: 3
+    characterImage: {fileID: 0}
+  - characterName: Femme Louche
+    longDialogue: TAISEZ - VOUS !!!
+    NextRowNumber: 4
+    characterImage: {fileID: 0}
+  - characterName: Femme Louche
+    longDialogue: "Bonne chance jeune h\xE9ros... Profitez du voyage."
+    NextRowNumber: -1
+    characterImage: {fileID: 0}
+  - characterName: Femme Louche
+    longDialogue: "Je t'ai d\xE9j\xE0 aid\xE9..."
+    NextRowNumber: -1
+    characterImage: {fileID: 0}
