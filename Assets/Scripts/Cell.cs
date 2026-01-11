@@ -6,7 +6,7 @@ public class Cell : MonoBehaviour, ICellActivable
     {
         if(GetComponent<IActionnable>() != null)
         {
-            GetComponent<IActionnable>().Action(CurrentPawn);
+            GetComponent<IActionnable>().Action(CurrentPawn, 0);
         }
     }
 }

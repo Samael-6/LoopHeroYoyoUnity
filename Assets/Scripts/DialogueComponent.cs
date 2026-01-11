@@ -6,8 +6,9 @@ public class DialogueComponent : MonoBehaviour, IActionnable
     private DialogueRow _currentRow;
     private int _currentRowIndex = 0;
     [SerializeField] private UIDialogueController _dialogueController;
-    public void Action(Pawn CurrentPawn)
+    public void Action(Pawn CurrentPawn, int IndexDialogue)
     {
+        _currentRowIndex = IndexDialogue;
         _currentRow = GetDialogueRow();
         _dialogueController.StartDialogue(this);
     }
