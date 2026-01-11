@@ -3,7 +3,7 @@ using UnityEngine;
 public class Pawn : MonoBehaviour
 {
     [SerializeField] private Board _board;
-    [SerializeField] private PlayerDatas _playerData;
+    [SerializeField] public PlayerDatas _playerData;
 
     private void Start()
     {

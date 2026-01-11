@@ -6,8 +6,7 @@ public class Dice : MonoBehaviour
 
     public void RollDice()
     {
-        int value = Random.Range(1, 7);
-        Debug.Log($"Dice rolled: {value}");
+        int value = Random.Range(1, 4);
         _pawn.TryMoving(value);
     }
 }
