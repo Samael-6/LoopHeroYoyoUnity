@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cellNumber: 4
   _IndexKingDialogue: 0
-  _IndexSuspiciousWomanDialogue: 0
-  _IsEquiped: 0
+  _IndexSuspiciousWomanDialogue: 5
+  _IsEquiped: 1
   _IsBeginning: 0
   _IsEnding: 0
   _IsDrunk: 0
