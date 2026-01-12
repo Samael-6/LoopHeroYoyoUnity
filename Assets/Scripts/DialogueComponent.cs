@@ -4,13 +4,13 @@ public class DialogueComponent : MonoBehaviour, IActionnable
 {
     [SerializeField] private DialogueDatas _dialogueData;
     private DialogueRow _currentRow;
-    private int _currentRowIndex = 0;
+    public int _currentRowIndex = 0;
     [SerializeField] private UIDialogueController _dialogueController;
     public void Action(Pawn CurrentPawn, int IndexDialogue)
     {
         _currentRowIndex = IndexDialogue;
         _currentRow = GetDialogueRow();
-        _dialogueController.StartDialogue(this);
+        _dialogueController.StartDialogue(this, CurrentPawn._board.GetCellByNumber(CurrentPawn._playerData._cellNumber));
     }
 
     public DialogueRow GetDialogueRow()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Pawn : MonoBehaviour
 {
-    [SerializeField] private Board _board;
+    [SerializeField] public Board _board;
     [SerializeField] public PlayerDatas _playerData;
 
     private void Start()

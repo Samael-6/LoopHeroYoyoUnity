@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class CellSuspiciousWomen : Cell
+public class CellSuspiciousWomen : Cell, IDialogueSetter
 {
+    private Pawn _pawn = null;
+
     public override void Activate(Pawn CurrentPawn)
     {
+        _pawn = CurrentPawn;
         if (CurrentPawn._playerData._IndexSuspiciousWomanDialogue== 5)
         {
-            SetIndexSupiciousWoman(CurrentPawn, 6);
+            SetIndex(6);
         }
         else
         {
@@ -16,14 +19,18 @@ public class CellSuspiciousWomen : Cell
         GetComponent<IActionnable>().Action(CurrentPawn, CurrentPawn._playerData._IndexSuspiciousWomanDialogue);
     }
 
-    public void SetIndexSupiciousWoman(Pawn CurrentPawn, int index)
+    public void SetIndex(int index)
     {
-        CurrentPawn._playerData._IndexKingDialogue = index;
+        if (_pawn._playerData._IsEquiped)
+        {
+            index = 5;
+        }
+        _pawn._playerData._IndexSuspiciousWomanDialogue = index;
     }
 
     private IEnumerator TeleportationGraveYard(Pawn pawn)
     {
-        yield return new WaitUntil(() => pawn._playerData._IndexSuspiciousWomanDialogue == 5);
-        pawn.TryMoving(5);
+        yield return new WaitUntil(() => pawn._playerData._IndexSuspiciousWomanDialogue == 4);
+        pawn.TryMoving(1);
     }
 }

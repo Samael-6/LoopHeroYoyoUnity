@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0535fb778b6da47b4a6289afec5e63, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  _cellNumber: 5
+  _cellNumber: 4
   _IndexKingDialogue: 0
   _IndexSuspiciousWomanDialogue: 0
-  _IsEquiped: 1
+  _IsEquiped: 0
   _IsBeginning: 0
   _IsEnding: 0
   _IsDrunk: 0
