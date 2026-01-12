@@ -14,7 +14,7 @@ public class CellSuspiciousWomen : Cell, IDialogueSetter
         }
         else
         {
-            StartCoroutine(TeleportationGraveYard(CurrentPawn));
+            StartCoroutine(TeleportationGraveyard(CurrentPawn));
         }
         GetComponent<IActionnable>().Action(CurrentPawn, CurrentPawn._playerData._IndexSuspiciousWomanDialogue);
     }
@@ -28,7 +28,7 @@ public class CellSuspiciousWomen : Cell, IDialogueSetter
         _pawn._playerData._IndexSuspiciousWomanDialogue = index;
     }
 
-    private IEnumerator TeleportationGraveYard(Pawn pawn)
+    private IEnumerator TeleportationGraveyard(Pawn pawn)
     {
         yield return new WaitUntil(() => pawn._playerData._IndexSuspiciousWomanDialogue == 4);
         pawn.TryMoving(1);
