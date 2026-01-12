@@ -3044,6 +3044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _board: {fileID: 1425691183}
   _playerData: {fileID: 11400000, guid: 6429c2db1d676a44e8e07084a08d59eb, type: 2}
+  _LooseScreen: {fileID: 1822012361}
 --- !u!1 &1425691178
 GameObject:
   m_ObjectHideFlags: 0

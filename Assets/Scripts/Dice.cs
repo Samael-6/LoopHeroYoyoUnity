@@ -6,6 +6,7 @@ public class Dice : MonoBehaviour
 
     public void RollDice()
     {
+        _pawn._playerData._NumberOfActions--;
         int value = Random.Range(1, 4);
         _pawn.TryMoving(value);
     }
