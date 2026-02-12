@@ -31,13 +31,52 @@ public class VampireAIController : MonoBehaviour
     {
         switch (state)
         {
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            case StateType.Attack:
+                if(!GetComponent<SightPerception>().isDeteced)
+                {
+                    newstatetype = StateType.Patrol;
+                    return true;
+                }
+
+                if(Vector3.Distance(target.transform.position, transform.position) > rangeAttack)
+                {
+                    newstatetype = StateType.Follow;
+                    return true;
+                }
+
+                break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            case StateType.Patrol:
+                if(GetComponent<SightPerception>().isDeteced)
+                {
+                    if (Vector3.Distance(target.transform.position, transform.position) <= rangeAttack)
+                    {
+                        newstatetype = StateType.Attack;
+                        return true;
+                    }
+
+                    newstatetype = StateType.Follow;
+                    return true;
+                }
+
+                break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             case StateType.Follow:
-                if(Vector3.Distance(target.transform.position, transform.position) <= rangeAttack)
+
+                if (!GetComponent<SightPerception>().isDeteced)
+                {
+                    newstatetype = StateType.Patrol;
+                    return true;
+                }
+
+                if (Vector3.Distance(target.transform.position, transform.position) <= rangeAttack)
                 {
                     newstatetype = StateType.Attack;
                     return true;
                 }
                 break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
         return false;
     }
@@ -53,6 +92,14 @@ public class VampireAIController : MonoBehaviour
     {
         switch (state)
         {
+            case StateType.Patrol:
+                GetComponent<NavMeshAgent>().speed = 3.5f;
+                break;
+
+            case StateType.Follow:
+                GetComponent<NavMeshAgent>().speed = 5f;
+                break;
+
             case StateType.Attack:
                 break;
         }
@@ -62,6 +109,10 @@ public class VampireAIController : MonoBehaviour
     {
         switch (state)
         {
+            case StateType.Patrol:
+                GetComponent<NavMeshAgent>().SetDestination(transform.position);
+                break;
+
             case StateType.Follow:
                 GetComponent<NavMeshAgent>().SetDestination(transform.position);
                 break;
@@ -89,15 +140,17 @@ public class VampireAIController : MonoBehaviour
     private void PatrolBehaviour()
     {
         GetComponent<NavMeshAgent>().SetDestination(navpoint.transform.position);
+        GetComponent<Animator>().SetFloat(name:"Speed", GetComponent<NavMeshAgent>().velocity.magnitude);
     }
 
     private void FollowBehaviour()
     {
         GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+        GetComponent<Animator>().SetFloat(name: "Speed", GetComponent<NavMeshAgent>().velocity.magnitude);
     }
 
     private void AttackBehaviour()
     {
-        GetComponent<Animator>().SetTrigger(name:"Bite");
+        GetComponent<Animator>().SetTrigger(name:"Punch");
     }
 }
