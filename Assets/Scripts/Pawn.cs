@@ -31,17 +31,19 @@ public class Pawn : MonoBehaviour
         transform.rotation = NewPos.rotation;
     }
 
-    public void TryMoving(int value)
+    public bool TryMoving(int value)
     {
         if (_playerData._NumberOfActions <= 0)
         {
             StartCoroutine(LooseScreen());
+            return false;
         }
         else
         {
             _playerData._cellNumber = _board.GetNextCellToMove(_playerData._cellNumber + value);
             MoveToCell();
             ActivateCell();
+            return true;
         }
     }
 
