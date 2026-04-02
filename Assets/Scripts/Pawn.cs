@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Pawn : MonoBehaviour
 {
     [SerializeField] public Board _board;
-    [SerializeField] public PlayerDatas _playerData;
+    [SerializeField] public PlayerDatasStruct _playerData;
     [SerializeField] public GameObject _LooseScreen;
 
     private void Start()
