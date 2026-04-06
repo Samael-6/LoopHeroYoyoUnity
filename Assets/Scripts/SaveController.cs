@@ -12,6 +12,8 @@ public struct PlayerDatasStruct
     public bool _IsBeginning;
     public bool _IsEnding;
     public bool _IsDrunk;
+    /// <summary>True quand le joueur revient du mini-jeu Sentinelle. Empêche le re-déclenchement de la cellule au rechargement de scène.</summary>
+    public bool _IsReturningFromSentinelle;
 }
 
 public class SaveController

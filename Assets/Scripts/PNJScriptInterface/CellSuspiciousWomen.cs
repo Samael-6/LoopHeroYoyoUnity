@@ -8,7 +8,7 @@ public class CellSuspiciousWomen : Cell, IDialogueSetter
     public override void Activate(Pawn CurrentPawn)
     {
         _pawn = CurrentPawn;
-        if (CurrentPawn._playerData._IndexSuspiciousWomanDialogue== 5)
+        if (CurrentPawn._playerData._IndexSuspiciousWomanDialogue == 5)
         {
             SetIndex(6);
         }
@@ -19,6 +19,7 @@ public class CellSuspiciousWomen : Cell, IDialogueSetter
         GetComponent<IActionnable>().Action(CurrentPawn, CurrentPawn._playerData._IndexSuspiciousWomanDialogue);
     }
 
+    /// <summary>Updates the suspicious woman dialogue index and persists the change.</summary>
     public void SetIndex(int index)
     {
         if (_pawn._playerData._IsEquiped)
@@ -26,6 +27,7 @@ public class CellSuspiciousWomen : Cell, IDialogueSetter
             index = 5;
         }
         _pawn._playerData._IndexSuspiciousWomanDialogue = index;
+        _pawn.SyncAndSave();
     }
 
     private IEnumerator TeleportationGraveyard(Pawn pawn)
@@ -34,3 +36,4 @@ public class CellSuspiciousWomen : Cell, IDialogueSetter
         pawn.TryMoving(1);
     }
 }
+

@@ -3,15 +3,17 @@ using UnityEngine;
 public class Dice : MonoBehaviour
 {
     [SerializeField] private Pawn _pawn;
-    [SerializeField] private SaveManager _saveManager;
 
+    /// <summary>Rolls the dice, moves the pawn, and persists the updated state.</summary>
     public void RollDice()
     {
         _pawn._playerData._NumberOfActions--;
         int value = Random.Range(1, 4);
-        if (_pawn.TryMoving(value))
+        // TryMoving calls SyncAndSave internally on success.
+        // If movement fails (actions == 0), sync the decremented count manually.
+        if (!_pawn.TryMoving(value))
         {
-            _saveManager.SaveGame();
+            _pawn.SyncAndSave();
         }
     }
 }

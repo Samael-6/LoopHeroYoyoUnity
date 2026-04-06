@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using static UnityEngine.Rendering.DebugUI;
 
 public class CellGraveyard : Cell
 {
@@ -8,12 +7,12 @@ public class CellGraveyard : Cell
 
     public override void Activate(Pawn CurrentPawn)
     {
-        if (!(CurrentPawn._playerData._IsEquiped))
+        if (!CurrentPawn._playerData._IsEquiped)
         {
-            StartCoroutine(ShowAndHide());
             CurrentPawn._playerData._IsEquiped = true;
+            CurrentPawn.SyncAndSave();
+            StartCoroutine(ShowAndHide());
         }
-
     }
 
     private IEnumerator ShowAndHide()
@@ -23,3 +22,4 @@ public class CellGraveyard : Cell
         _UIEquipmentMessage.SetActive(false);
     }
 }
+

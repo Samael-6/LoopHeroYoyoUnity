@@ -1,8 +1,7 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class CellKing : Cell , IDialogueSetter
+public class CellKing : Cell, IDialogueSetter
 {
     private Pawn _pawn = null;
     [SerializeField] private GameObject _UIVictoryMessage;
@@ -22,16 +21,17 @@ public class CellKing : Cell , IDialogueSetter
         GetComponent<IActionnable>().Action(CurrentPawn, CurrentPawn._playerData._IndexKingDialogue);
     }
 
+    /// <summary>Updates the king dialogue index and persists the change.</summary>
     public void SetIndex(int index)
     {
-        if (!(_pawn._playerData._IsEnding) && index > 11)
+        if (!_pawn._playerData._IsEnding && index > 11)
         {
             index = 11;
         }
         _pawn._playerData._IndexKingDialogue = index;
+        _pawn.SyncAndSave();
     }
 
-    // Correction de la propriété VictoryScreen pour inclure au moins un accesseur
     private IEnumerator VictoryScreen(Pawn pawn)
     {
         yield return new WaitUntil(() => pawn._playerData._IndexKingDialogue == 15);
@@ -40,3 +40,4 @@ public class CellKing : Cell , IDialogueSetter
         Application.Quit();
     }
 }
+
