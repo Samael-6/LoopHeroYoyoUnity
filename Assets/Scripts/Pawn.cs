@@ -18,7 +18,7 @@ public class Pawn : MonoBehaviour
             _playerData._NumberOfActions = 100;
             _playerData._IndexSuspiciousWomanDialogue = 0;
             _playerData._IndexKingDialogue = 0;
-            _playerData._cellNumber = 0;
+            _playerData._cellNumber = 8;
         }
         MoveToCell();
         ActivateCell();
@@ -53,7 +53,7 @@ public class Pawn : MonoBehaviour
         cell.Activate(this);
     }
 
-    private IEnumerator LooseScreen()
+    public IEnumerator LooseScreen()
     {
         _LooseScreen.SetActive(true);
         yield return new WaitForSeconds(5f);

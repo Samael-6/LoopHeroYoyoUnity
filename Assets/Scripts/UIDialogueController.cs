@@ -34,6 +34,13 @@ public class UIDialogueController : MonoBehaviour
     public void EndDialogue()
     {
         _currentCell.GetComponent<IDialogueSetter>()?.SetIndex(_dialogueComponent._currentRowIndex);
+        if (_currentCell.name == "Sentinelle")
+        {
+
+            _currentCell.GetComponent<SceneLoader>().isActive = true;
+            _currentCell.GetComponent<SceneLoader>().LoadNewScene();
+        }
+        ;
         _dialoguePanel.SetActive(false);
     }
 }

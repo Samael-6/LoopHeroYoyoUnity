@@ -11,8 +11,7 @@ public class Dice : MonoBehaviour
         int value = Random.Range(1, 4);
         if (_pawn.TryMoving(value))
         {
-            _saveManager.SaveGame(); 
+            _saveManager.SaveGame();
         }
-        ;
     }
 }

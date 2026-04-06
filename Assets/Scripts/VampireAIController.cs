@@ -15,7 +15,7 @@ public class VampireAIController : MonoBehaviour
     [SerializeField] private StateType state = StateType.None;
     [SerializeField] private StateType newstatetype = StateType.None;
     [SerializeField] private GameObject target;
-    [SerializeField] private GameObject navpoint;
+    [SerializeField] private Vector3 navpoint;
     [SerializeField] private float rangeAttack = 1.5f;
 
     private void Update()
@@ -88,6 +88,11 @@ public class VampireAIController : MonoBehaviour
         StartState();
     }
 
+    public StateType GetState()
+    {
+        return state;
+    }
+
     private void StartState()
     {
         switch (state)
@@ -139,8 +144,12 @@ public class VampireAIController : MonoBehaviour
 
     private void PatrolBehaviour()
     {
-        GetComponent<NavMeshAgent>().SetDestination(navpoint.transform.position);
+        GetComponent<NavMeshAgent>().SetDestination(navpoint);
         GetComponent<Animator>().SetFloat(name:"Speed", GetComponent<NavMeshAgent>().velocity.magnitude);
+        if (Vector3.Distance(transform.position, navpoint) < 1f)
+        {
+            navpoint = GetRandomNavMeshPoint();
+        }
     }
 
     private void FollowBehaviour()
@@ -152,5 +161,16 @@ public class VampireAIController : MonoBehaviour
     private void AttackBehaviour()
     {
         GetComponent<Animator>().SetTrigger(name:"Punch");
+    }
+
+    private Vector3 GetRandomNavMeshPoint()
+    {
+        Vector3 randomPoint = new Vector3(Random.Range(-18, 18), 0, Random.Range(-18, 18));
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, 5f, NavMesh.AllAreas))
+            return hit.position;
+        else
+            return GetRandomNavMeshPoint();
     }
 }
