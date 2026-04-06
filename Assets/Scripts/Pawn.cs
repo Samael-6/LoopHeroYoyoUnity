@@ -7,9 +7,11 @@ public class Pawn : MonoBehaviour
     [SerializeField] public Board _board;
     [SerializeField] public PlayerDatasStruct _playerData;
     [SerializeField] public GameObject _LooseScreen;
+    [SerializeField] public Camera _camera;
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         if (_playerData._IsEnding || _playerData._NumberOfActions == 0)
         {
             _playerData._IsBeginning = true;
@@ -18,7 +20,7 @@ public class Pawn : MonoBehaviour
             _playerData._NumberOfActions = 100;
             _playerData._IndexSuspiciousWomanDialogue = 0;
             _playerData._IndexKingDialogue = 0;
-            _playerData._cellNumber = 8;
+            _playerData._cellNumber = 0;
         }
         MoveToCell();
         ActivateCell();

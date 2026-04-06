@@ -4,6 +4,7 @@ using UnityEngine;
 public class CellSentinelle : Cell
 {
     private Pawn _pawn = null;
+    private bool _isOutOfMiniGame = false;
 
     public override void Activate(Pawn CurrentPawn)
     {
