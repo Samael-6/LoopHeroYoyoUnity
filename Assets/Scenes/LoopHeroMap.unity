@@ -2998,6 +2998,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8633121448869061565, guid: bcf04caf45240a24491ed1172accf019, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2200577206496197167, guid: bcf04caf45240a24491ed1172accf019, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5515156
@@ -3091,7 +3095,7 @@ MonoBehaviour:
   _LooseScreen: {fileID: 1822012361}
   _camera: {fileID: 720791575}
   _saveManager: {fileID: 682728700}
-  _dice: {fileID: 0}
+  _dice: {fileID: 1200326502}
 --- !u!1 &1425691178
 GameObject:
   m_ObjectHideFlags: 0
@@ -4747,7 +4751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Labyrinthe
-  isActive: 0
+  _pawn: {fileID: 1408705747}
 --- !u!1001 &2127357253
 PrefabInstance:
   m_ObjectHideFlags: 0

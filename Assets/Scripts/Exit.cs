@@ -7,7 +7,6 @@ public class Exit : MonoBehaviour
     {
         if (other.gameObject == _Player)
         {
-            GetComponent<SceneLoader>().isActive = true;
             GetComponent<SceneLoader>().LoadNewScene();
         }
     }

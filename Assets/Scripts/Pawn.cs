@@ -6,7 +6,7 @@ public class Pawn : MonoBehaviour
     [SerializeField] public Board _board;
     [SerializeField] public GameObject _LooseScreen;
     [SerializeField] public Camera _camera;
-    [SerializeField] private SaveManager _saveManager;
+    [SerializeField] public SaveManager _saveManager;
     [SerializeField] public Dice _dice;
 
     public PlayerDatasStruct _playerData;
@@ -14,8 +14,8 @@ public class Pawn : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
-
         _saveManager.LoadGame();
+        Debug.Log("Current cell number: " + _saveManager.GetPlayerDatas()._cellNumber);
         _playerData = _saveManager.GetPlayerDatas();
 
         if (_playerData._IsEnding || _playerData._NumberOfActions == 0)
@@ -38,7 +38,7 @@ public class Pawn : MonoBehaviour
         _playerData._NumberOfActions = 100;
         _playerData._IndexSuspiciousWomanDialogue = 0;
         _playerData._IndexKingDialogue = 0;
-        _playerData._cellNumber = 0;
+        _playerData._cellNumber = 8;
     }
     private void MoveToCell()
     {

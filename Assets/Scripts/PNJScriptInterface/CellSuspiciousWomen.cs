@@ -19,7 +19,6 @@ public class CellSuspiciousWomen : Cell, IDialogueSetter
         GetComponent<IActionnable>().Action(CurrentPawn, CurrentPawn._playerData._IndexSuspiciousWomanDialogue);
     }
 
-    /// <summary>Updates the suspicious woman dialogue index and persists the change.</summary>
     public void SetIndex(int index)
     {
         if (_pawn._playerData._IsEquiped)
