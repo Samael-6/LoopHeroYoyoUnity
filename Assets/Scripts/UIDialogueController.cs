@@ -38,6 +38,10 @@ public class UIDialogueController : MonoBehaviour
         {
             _currentCell.GetComponent<SceneLoader>().LoadNewScene();
         }
+        if (_currentCell.name == "Tavernier")
+        {
+            _currentCell.GetComponent<CellTavernier>().StartMiniGame(_dialogueComponent.GetComponent<Pawn>());
+        }
         _dialoguePanel.SetActive(false);
     }
 }
