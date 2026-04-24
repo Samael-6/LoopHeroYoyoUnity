@@ -21,22 +21,26 @@ public class MemoryGame : MonoBehaviour
         NbRevealedCards = 0;
         round = 3;
         _pawn = pawn;
-
+        ResetAllCards();
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void ResetAllCards()
+    {
         foreach (Button card in _cards)
         {
+            card.interactable = true;
             Image cardImage = card.gameObject.GetComponentInChildren<Image>();
             Color tempColor = cardImage.color;
             tempColor.a = 1f;
             cardImage.color = tempColor;
-            Debug.Log("card caché");
         }
-
-        
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void EndMemoryGame()
     {
         _pawn._IsDrogued = 3-round;
+        StopAllCoroutines();
+        ResetAllCards();
         gameObject.SetActive(false);
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -13,7 +13,6 @@ public class Dice : MonoBehaviour
             _pawn._IsDrogued--;
             value = 1;
         }
-        Debug.Log("Dice rolled: " + value);
         if (!_pawn.TryMoving(value))
         {
             _pawn.SyncAndSave();
