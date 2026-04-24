@@ -28,4 +28,5 @@ Lorsque le joueur atteint la case de sortie, il est téléporté dans la map pri
 J'ai mis à jour le système de sauvegarde en prenant un peu d'avance sur le prochain rendu. J'espère pouvoir régler mon "bug" avec le mini-jeu et pouvoir test en faisant un executable.
 
 # Mini-Jeu
-Le but est tout simplement de s'évader du labyrinthe dans lequel rode la sentinelle.
+--> Le but est tout simplement de s'évader du labyrinthe dans lequel rode la sentinelle, en cas contraire le joueur meurs et perd la partie.
+--> Le second mini-jeu est un memory, moins le joueur se trompe plus vite il peut revenir dans la map principal et le moins il sera bourré longtemps.
