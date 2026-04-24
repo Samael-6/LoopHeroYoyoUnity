@@ -38,11 +38,11 @@ public class Pawn : MonoBehaviour
         _playerData._NumberOfActions = 100;
         _playerData._IndexSuspiciousWomanDialogue = 0;
         _playerData._IndexKingDialogue = 0;
-        _playerData._cellNumber = 8;
+        _playerData._cellNumber = 22;
     }
     private void MoveToCell()
     {
-        Transform newPos = _board.GetCellByNumber(_playerData._cellNumber).transform;
+        Transform newPos = _board.GetCellByNumber(22).transform;//_playerData._cellNumber
         transform.position = newPos.position + new Vector3(0, 1, 0);
         transform.rotation = newPos.rotation;
     }
