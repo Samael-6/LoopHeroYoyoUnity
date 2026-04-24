@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _memory: {fileID: 609720949}
+  _pawn: {fileID: 1408705747}
 --- !u!1001 &161246575
 PrefabInstance:
   m_ObjectHideFlags: 0

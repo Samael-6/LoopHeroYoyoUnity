@@ -9,13 +9,13 @@ public class Pawn : MonoBehaviour
     [SerializeField] public SaveManager _saveManager;
     [SerializeField] public Dice _dice;
 
+    public int _IsDrogued = 0;
     public PlayerDatasStruct _playerData;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
         _saveManager.LoadGame();
-        Debug.Log("Current cell number: " + _saveManager.GetPlayerDatas()._cellNumber);
         _playerData = _saveManager.GetPlayerDatas();
 
         if (_playerData._IsEnding || _playerData._NumberOfActions == 0)
@@ -29,7 +29,6 @@ public class Pawn : MonoBehaviour
         ActivateCell();
     }
 
-    /// <summary>Resets all progression flags to their initial values.</summary>
     private void ResetPlayerData()
     {
         _playerData._IsBeginning = true;
@@ -38,16 +37,15 @@ public class Pawn : MonoBehaviour
         _playerData._NumberOfActions = 100;
         _playerData._IndexSuspiciousWomanDialogue = 0;
         _playerData._IndexKingDialogue = 0;
-        _playerData._cellNumber = 22;
+        _playerData._cellNumber = 0;
     }
     private void MoveToCell()
     {
-        Transform newPos = _board.GetCellByNumber(22).transform;//_playerData._cellNumber
+        Transform newPos = _board.GetCellByNumber(_playerData._cellNumber).transform;
         transform.position = newPos.position + new Vector3(0, 1, 0);
         transform.rotation = newPos.rotation;
     }
 
-    /// <summary>Attempts to move the pawn forward by <paramref name="value"/> cells. Returns true on success.</summary>
     public bool TryMoving(int value)
     {
         if (_playerData._NumberOfActions <= 0)
@@ -69,7 +67,6 @@ public class Pawn : MonoBehaviour
         cell.Activate(this);
     }
 
-    /// <summary>Pushes the current struct state into SaveManager and persists it to disk.</summary>
     public void SyncAndSave()
     {
         _saveManager.SetPlayerDatas(_playerData);

@@ -9,16 +9,18 @@ public class MemoryGame : MonoBehaviour
     private int round = 3;
     private List<int> revealedCardIndex = new List<int>();
     private List<int> revealedCardsIndexTemp = new List<int>();
+    private Pawn _pawn;
 
     [SerializeField] List<Button> _cards;
     [SerializeField] List<Image> _cardFaces;
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void StartMemoryGame()
+    public void StartMemoryGame(Pawn pawn)
     {
         revealedCardIndex = new List<int>();
         revealedCardsIndexTemp = new List<int>();
         NbRevealedCards = 0;
         round = 3;
+        _pawn = pawn;
 
         foreach (Button card in _cards)
         {
@@ -26,16 +28,16 @@ public class MemoryGame : MonoBehaviour
             Color tempColor = cardImage.color;
             tempColor.a = 1f;
             cardImage.color = tempColor;
+            Debug.Log("card caché");
         }
 
-        Debug.Log("Memory Game Started!");
+        
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void EndMemoryGame()
     {
-        // Code to end the memory game goes here
+        _pawn._IsDrogued = 3-round;
         gameObject.SetActive(false);
-        Debug.Log("Memory Game Ended!");
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void RevealCard(int cardIndex)
@@ -56,7 +58,6 @@ public class MemoryGame : MonoBehaviour
             {
                 if (IsWinningConditionMet())
                 {
-                    Debug.Log("You win!");
                     EndMemoryGame();
                 }
                 else
@@ -74,7 +75,6 @@ public class MemoryGame : MonoBehaviour
 
                     if (round <= 0)
                     {
-                        Debug.Log("Game Over!");
                         EndMemoryGame();
                     }
                 }
